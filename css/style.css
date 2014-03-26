@@ -1,0 +1,114 @@
+
+html, body {
+    height: 100%;
+}
+
+.we-app {
+    position: relative;
+    height: 0px;
+}
+
+.we-editor {
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 0px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow:    0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+    box-shadow:         0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+    background-color: #e7e7e7;
+}
+
+.we-editor-container-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.we-editor-container-wrapper > .container {
+    width: 100%;
+}
+
+
+.we-editor-toolbar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+.we-editor-toolbar > .btn {
+
+    margin-left: 4px;
+    margin-bottom: 8px;
+
+}
+
+.we-editor-component-tree-item-name {
+    padding: 5px;
+}
+
+.we-editor-component-tree-item-name.active {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.we-editor-component-tree-item-name.active:hover {
+}
+
+.we-editor-component-tree-item-name:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.we-editor-component-tree-item-name + ul {
+    margin-top: 10px;
+}
+
+.we-editor-toolbar-options {
+    border-top: 1px solid rgba(0,0,0,0.25);
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-top: 5px;
+    clear: both;
+}
+
+.we-editor-toolbar-options a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pokus {
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.marginInput {
+    width: 40px;
+}
+
+h1, h2, h3 {
+    margin: 0px;
+}
+
+.pokus2 {
+    padding-right: 100px;
+    position: relative;
+}
+
+.pokus3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: visible;
+}

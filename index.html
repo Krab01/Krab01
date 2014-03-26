@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="application-name" content="Webeditor">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jaromír Hřibal">
+    <title>Webeditor</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/JSXTransformer.js"></script>
+    <script type="text/javascript" src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/webedit/Styler.js"></script>
+    <script type="text/jsx" src="js/webedit/Webedit.js"></script>
+    <style type="text/css">
+        @import url("css/bootstrap.css");
+        @import url("css/bootstrap-theme.css");
+        @import url("css/style.css");
+        @import url("js/jquery-ui/themes/base/jquery-ui.css");
+    </style>
+    <script type="text/jsx">
+        /** @jsx React.DOM */
+        $(function () {
+            React.renderComponent(<Editor />, document.getElementById("app"));
+        });
+    </script>
+</head>
+<body>
+    <div id="app" style="height: 100%">
+        <!-- here will be mounted editor app -->
+    </div>
+</body>
+</html>
