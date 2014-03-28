@@ -15,7 +15,7 @@ html, body {
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.23);
     -moz-box-shadow:    0px 0px 4px 0px rgba(0, 0, 0, 0.23);
     box-shadow:         0px 0px 4px 0px rgba(0, 0, 0, 0.23);
-    background-color: #e7e7e7;
+    background-color: #FFFFFF;
 }
 
 .we-editor-container-wrapper {
@@ -112,3 +112,4 @@ h1, h2, h3 {
     top: 0;
     overflow: visible;
 }
+

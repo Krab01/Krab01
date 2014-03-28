@@ -180,13 +180,16 @@ var Editor = React.createClass({
 
     componentDidMount: function () {
         var self = this;
+
+        
         $(this.getDOMNode()).children('.we-app').children('.we-editor').resizable({
             stop: function (e, ui) {
                 self.setState({contentHeight: ui.size.height - self.getEditorNonContentHeight()});
             }
         }).draggable();
-
+    
     },
+
 
     render: function () {
         var style = {
@@ -309,7 +312,7 @@ var Components = {
 
     P: React.createClass({
         render: function () {
-            return (<p style={Styler(this.props.data.options.values)}>{this.props.data.options.values['body'] ? this.props.data.options.values['body'] : ''}</p>);
+            return (<p contenteditable="true" style={Styler(this.props.data.options.values)}>{this.props.data.options.values['body'] ? this.props.data.options.values['body'] : ''}</p>);
         }
     }),
 
@@ -752,6 +755,13 @@ var Options = {
                     label: 'Přejmenovat'
                 }
             },
+            {
+                class: 'TextEdit',
+                options: {
+                    label: 'Barva pozadí:'
+                },
+                key: 'bgcolor'
+            } ,
         ],
         BPrimaryButton: [
         {

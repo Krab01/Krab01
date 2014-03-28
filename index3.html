@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="application-name" content="Webeditor">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jaromír Hřibal">
+    <title>Webeditor</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/JSXTransformer.js"></script>
+    <script type="text/javascript" src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/webedit/Styler.js"></script>
+    <script type="text/jsx" src="js/webedit/Webedit.js"></script>
+    <style type="text/css">
+        @import url("css/bootstrap.css");
+        @import url("css/bootstrap-theme.css");
+        @import url("css/style.css");
+        @import url("js/jquery-ui/themes/base/jquery-ui.css");
+    </style>
+    <script type="text/jsx">
+        /** @jsx React.DOM */
+        $(function () {
+
+            var TodoList = React.createClass({ 
+
+                getInitialState: function () {
+                    return {
+                        items: []
+                    };
+                },
+                    bla: function (e) {
+                        this.setState({hodnota: $(e.val())});
+                    },
+                    render: function () {
+                        return (
+                            <div>
+                                <TodoItems barva={this.state.color} items={this.state.items} />
+                                <input ref="novy" type="text"  value={this.state.hodnota} onChange={this.bla}/>
+                                <label htmlFor="color">barva</label>
+                                <input name="color" ref="barva" type="text"  />
+                                <button type="button" type="button" className="btn btn-default" onClick={this.changeColor}>změnit barvu</button>
+                                <button type="button" type="button" className="btn btn-default" onClick={this.addTodo}>přidat</button>
+                            </div>
+                        );
+
+                    },
+
+                    changeColor: function (e) {
+                        var el = $(this.refs.barva.getDOMNode());
+                        this.setState({color: el.val()});
+                        el.val("");
+                        
+                    },
+
+                    addTodo: function (e) {
+                        var el = $(this.refs.novy.getDOMNode());
+                        this.state.items.push(el.val());
+                        el.val("");
+                        this.forceUpdate();
+                    }
+            });
+
+            var TodoItems = React.createClass({
+                getDefaultProps: function () {
+                    return {color: "#000000"};
+                },
+                render: function () {
+                    var style = {
+                        color: this.props.barva
+                    };
+                    var items = _.map(this.props.items, function (item) { return (<TodoItem item={item} />);});
+                    return (<ul style={style}>{items}</ul>);
+                }
+            });
+
+            var TodoItem = React.createClass({
+                render: function () {
+                    return (<li>{this.props.item}</li>);
+                }
+            });
+
+            React.renderComponent(<TodoList />, document.getElementById("app"));
+
+        });
+    </script>
+</head>
+<body>
+    <div id="app" style="height: 100%">
+        <!-- here will be mounted editor app -->
+    </div>
+</body>
+</html>
